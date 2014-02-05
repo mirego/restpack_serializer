@@ -33,7 +33,7 @@ module RestPack::Serializer
           if item[:links]
             item[:links].each do |link_key, link_value|
               unless link_value.is_a? Array
-                plural_linked_key = "#{link_key}s".to_sym
+                plural_linked_key = link_key.to_s.pluralize.to_sym
 
                 if @resources[plural_linked_key]
                   linked_resource = @resources[plural_linked_key].find { |i| i[:id] == link_value }
