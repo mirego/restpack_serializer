@@ -12,6 +12,9 @@ describe RestPack::Serializer::Factory do
   it "creates by lowercase plural string" do
     factory.create("songs").should be_an_instance_of(MyApp::SongSerializer)
   end
+  it "creates by lowercase plural string with underscore" do
+    factory.create("album_images").should be_an_instance_of(MyApp::AlbumImageSerializer)
+  end
   it "creates by symbol" do
     factory.create(:song).should be_an_instance_of(MyApp::SongSerializer)
   end

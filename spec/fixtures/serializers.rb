@@ -22,4 +22,8 @@ module MyApp
     attributes :id, :name, :website
     can_include :albums, :songs
   end
+
+  class AlbumImageSerializer
+    include RestPack::Serializer
+  end
 end
